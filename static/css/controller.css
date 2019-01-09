@@ -1,0 +1,58 @@
+.controller{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 350px;
+    background: rgba(238, 238, 238, 0.5);
+}
+
+.controller > div{
+    padding: 10px;
+    font-size: .8em;
+    /* background: rgba(255, 255, 255, .5); */
+    /* width: 100%; */
+}
+
+.controller nav{
+    padding: 10px;
+    background: rgba(102, 162, 197, .5);
+    color: white;
+}
+
+.controller nav.main-nav{
+    cursor: move;
+}
+
+.controller nav .nav-controller{
+    float: right;
+    position: relative;
+}
+
+.controller nav .nav-controller div{
+    float: right;
+    width: 20px !important;
+    margin-left: 3px;
+    text-align: center;
+    cursor: pointer;
+    transition: ease .25s;
+    color: rgb(219, 219, 219);
+}
+
+.controller nav .nav-controller div:hover{
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 7px #fff;
+    border-radius: 100%;
+}
+
+.controller nav .nav-controller div.close{
+    background: rgb(231, 156, 156);
+}
+
+.controller nav.sub-nav{
+    background: rgba(110, 158, 185, 0.25);
+    font-size: .8em;
+}
+
+.controller input, .controller select, .controller .background button{
+    width: 100%;
+}

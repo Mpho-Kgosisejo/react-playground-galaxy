@@ -1,0 +1,37 @@
+.movement-objects{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: white; */
+    /* width: 500px;
+    height: 250px; */
+    overflow: hidden;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.movement-objects .object{
+    background: rgb(66, 69, 77);
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    /* transition: ease-out .1s; */
+    text-align: center;
+    box-shadow: -2px 0px 5px rgba(212, 212, 212, .3);
+    cursor: pointer;
+}
+
+.movement-objects .object:hover, .movement-objects .object.selected{
+    box-shadow: 0px 0px 10px rgba(236, 236, 236, 0.75);
+}
+
+.movement-objects .object.selected{
+    box-shadow: 0px 0px 15px rgba(236, 236, 236, 0.8);
+}
+
+.movement-objects .object.transition{
+    /* transition: ease .1s; */
+}
