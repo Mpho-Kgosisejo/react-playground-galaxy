@@ -102,7 +102,7 @@ const ObjectX = ({obj, state, dispatchMovement}) => {
                 // transition: "ease .05s"
             }}
         >
-            {`${id} - ${selected}`}
+            {``}
         </div>
     )
 }

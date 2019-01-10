@@ -14,7 +14,14 @@ export const saveScreen = (e, screen) => {
 
 export const getScreen = () => {
     const screen = JSON.parse(localStorage.getItem(getItem("screen")))
-
+    
+    if (!screen){
+        return ({
+            borderedScreen: true,
+            w: 500,
+            h: 500
+        })
+    }
     return ({
         borderedScreen: screen.borderedScreen,
         w: parseInt(screen.w),
