@@ -1,7 +1,7 @@
 .controller{
     position: absolute;
-    top: 5px;
-    left: 5px;
+    /* top: 5px;
+    left: 5px; */
     width: 350px;
     background: rgba(238, 238, 238, 0.5);
 }
@@ -21,6 +21,12 @@
 
 .controller nav.main-nav{
     cursor: move;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 .controller nav .nav-controller{

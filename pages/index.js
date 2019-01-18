@@ -13,7 +13,12 @@ const Header = ({color, style}) => <div className="header">
 
 export default class Index extends React.Component {
     state = {
+        mouse: {
+            x: 0,
+            y: 0
+        },
         controller: "objects",
+        controllerClicked: false,
         rgba: {
             r: 0,
             g: 0,
@@ -31,8 +36,10 @@ export default class Index extends React.Component {
             colored: false,
             screen: {
                 borderedScreen: true,
-                w: 1000,
-                h: 500
+                w: 0,
+                h: 0,
+                x: 0,
+                y: 400
             },
             pingCount: 0,
             speed: 100,
@@ -94,7 +101,7 @@ export default class Index extends React.Component {
                 loading: false,
                 movement: {
                     ...this.state.movement,
-                    screen: getScreen()
+                    screen: getScreen(this.state.movement.screen)
                 }
             }
         })
@@ -120,6 +127,34 @@ export default class Index extends React.Component {
                 moveObjects({movement: this.state.movement, dispatchMovement: this.dispatchMovement})
             }
         }, this.state.movement.speed) // might not work...?
+
+        document.addEventListener("keydown", this.handleKeyEvent)
+        document.addEventListener("mousemove", this.handleMouseEvent)
+    }
+
+    handleMouseEvent = e => {
+        
+        this.state.dispatch({mouse: {x: e.x, y: e.y}})
+    }
+
+    handleKeyEvent = e => {
+        switch (e.keyCode) {
+            case 38:
+                console.log("Key => UP")    
+            break;
+            case 39:
+                console.log("Key => RIGHT")    
+            break;
+            case 40:
+                console.log("Key => DOWN")    
+            break;
+            case 37:
+                console.log("Key => LEFT")    
+            break;
+            default:
+                console.log("key =>", e.code, e.keyCode)
+            break
+        }
     }
 
     render(){

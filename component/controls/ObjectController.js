@@ -11,6 +11,7 @@ const ObjectController = ({state, funcs}) => {
 
     return (
         <div>
+            Objects Count: {state.movement.objects.length}
             <div className="input">
                 <label htmlFor="colored">Colored Objects</label>
                 <input type="checkbox" name="colored" id="colored" checked={colored} onChange={() => state.dispatch({movement: {...state.movement, colored: colored ? false : true}})} />    

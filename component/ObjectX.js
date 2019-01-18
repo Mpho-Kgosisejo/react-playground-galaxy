@@ -1,7 +1,7 @@
 import * as random from "./utils/random"
 
 export const generateObject = ({screenWidth, screenHeight, colored, pingCount, id = null, space}) => {
-    const max = 100
+    const max = 200
     const min = 2
     const width = random.number({min, max})
     const dotPercentage = width / max
